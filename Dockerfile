@@ -1,9 +1,10 @@
 FROM centos:8
 
-MAINTAINER Siamak Sadeghianfar <ssadeghi@redhat.com>
+LABEL Author Siamak Sadeghianfar <ssadeghi@redhat.com>
 
 USER root
 
-RUN yum -y install skopeo
+RUN yum -y install skopeo jq && \
+    yum clean all
 
 USER 1001
